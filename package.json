@@ -1,0 +1,24 @@
+{
+  "name": "node-random-todo-api",
+  "version": "1.0.0",
+  "description": "random todo api",
+  "main": "index.js",
+  "scripts": {
+    "//": "heroku start script",
+    "start": "node server/server.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
+  "author": "kenn lau",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.0",
+    "mongodb": "^2.2.24",
+    "mongoose": "^4.8.6"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
+}
