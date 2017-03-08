@@ -1,10 +1,10 @@
 {
   "development": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/randomTodosApp"
+    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosApp"
   },
   "test": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/randomTodosAppTest"
+    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosAppTest"
   }
 }
