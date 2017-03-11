@@ -1,30 +1,27 @@
 require('./config/config');
 
+const bodyParser = require('body-parser');
 const express = require('express');
+const _ = require('lodash');
 const { mongoose } = require('./db/mongoose');
+const { ObjectID } = require('mongodb');
 const { Todo } = require('./models/todo');
+const TodoController = require('./controllers/TodoController');
 
 var app = express();
 
+// middleware to parse incoming response, json
+app.use(bodyParser.json());
+
+// middleware, error handling, this should be last 
+app.use(function(err, req, res, next){
+  res.status(400).send({});
+});
+
+app.use('/todos', TodoController);
+
 app.get('/', function(req, res){
   res.status(200).send('ok');
-});
-
-// POST Todo
-app.post('/todos', (req, res) => {
-  var todo = new Todo({
-    text: 'play piano'
-  });
-
-  todo.save().then((todo) => {
-    res.status(200).send({ todo });
-  }, (err) => {
-    res.status(400).send({});
-  });
-});
-
-// GET Todos
-app.get('/todos', (req, res) => {
 });
 
 // heroku sets process.env.PORT
