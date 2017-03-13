@@ -2,13 +2,11 @@ require('./config/config');
 
 const bodyParser = require('body-parser');
 const express = require('express');
-const _ = require('lodash');
+
 const { mongoose } = require('./db/mongoose');
-const { ObjectID } = require('mongodb');
-const { Todo } = require('./models/todo');
 const TodoController = require('./controllers/TodoController');
 
-var app = express();
+const app = express();
 
 // middleware to parse incoming response, json
 app.use(bodyParser.json());
