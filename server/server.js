@@ -5,6 +5,7 @@ const express = require('express');
 
 const { mongoose } = require('./db/mongoose');
 const TodoController = require('./controllers/TodoController');
+const UserController = require('./controllers/UserController');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(function(err, req, res, next){
 });
 
 app.use('/todos', TodoController);
+app.use('/users', UserController);
 
 app.get('/', function(req, res){
   res.status(200).send('ok');

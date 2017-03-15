@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var Todo = mongoose.model('Todo', {
+let Todo = mongoose.model('Todo', {
   completed: {
     type: Boolean,
     default: false,
