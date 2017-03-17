@@ -1,10 +1,12 @@
 {
   "development": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosApp"
+    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosApp",
+    "JWT_SECRET": "&}$!^2 Y97^8X/v"
   },
   "test": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosAppTest"
+    "MONGODB_URI": "mongodb://localhost:27017/RandomTodosAppTest",
+    "JWT_SECRET": "4)2l)m^c#1:o{1Q"
   }
 }

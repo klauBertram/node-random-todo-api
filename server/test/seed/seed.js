@@ -1,6 +1,7 @@
 const { ObjectID } = require('mongodb');
 
 const { Todo } = require('../../models/todo');
+const { User } = require('../../models/user');
 
 const TODOS = [{
   _id: new ObjectID(),
@@ -20,6 +21,16 @@ const TODOS = [{
   text: 'buy milk'
 }];
 
+const USERS = [{
+  _id: new ObjectID(),
+  email: 'tony@si.com',
+  password: '123456'
+}, {
+  _id: new ObjectID(),
+  email: 'pepper@si.com',
+  password: 'abcdef'  
+}]
+
 const populateTodos = (done) => {
   // remove all todos then re-add items
   Todo.remove({}).then(() => {
@@ -27,7 +38,15 @@ const populateTodos = (done) => {
   });
 }
 
+const populateUsers = (done) => {
+  User.remove({}).then(() => {
+    return User.insertMany(USERS).then(() => done());
+  });
+}
+
 module.exports = {
   populateTodos,
-  TODOS
+  populateUsers,
+  TODOS,
+  USERS
 }
